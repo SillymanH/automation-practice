@@ -47,7 +47,7 @@ public class MainSuite {
         String EXPECTED_RESULT_SUCCESS_LABEL = "Blouse";
         String ACTUAL_RESULT_LABEL = "";
 
-        List<WebElement> aTagElements = driver.findElementsByTagName("a");;
+        List<WebElement> aTagElements = driver.findElementsByTagName("a");
         for (WebElement quickViewElement : aTagElements){
             if (quickViewElement.getAttribute("href").equals(itemURL)) {
 
