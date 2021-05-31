@@ -1,19 +1,19 @@
 import dataProvider.ConfigFileReader;
-import org.junit.*;
+import org.junit.FixMethodOrder;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import org.junit.runners.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import org.testng.Assert;
+import org.testng.annotations.*;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@FixMethodOrder()
 public class MainSuite {
 
     private static ChromeDriver driver;
     private static WebDriverWait wait;
-    private WebElement iframe;
     private String EXPECTED_RESULT_SUCCESS_LABEL;
     private String ACTUAL_RESULT_LABEL;
     private static ConfigFileReader configFileReader;
@@ -36,7 +36,6 @@ public class MainSuite {
         String EXPECTED_RESULT_SUCCESS_LABEL = "My Store";
 
         driver.get(URL);
-        //TODO: Read URL from external file or properties
         String ACTUAL_RESULT_LABEL = driver.getTitle();
         Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
@@ -54,7 +53,7 @@ public class MainSuite {
 
                 quickViewElement.click();
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("fancybox-iframe")));
-                iframe = driver.findElementByClassName("fancybox-iframe");
+                WebElement iframe = driver.findElementByClassName("fancybox-iframe");
                 driver.switchTo().frame(iframe);
                 List<WebElement> headerElements = driver.findElementsByTagName("h1");
                 for (WebElement header : headerElements) {
