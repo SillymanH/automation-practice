@@ -36,7 +36,6 @@ public class MainSuite {
         String EXPECTED_RESULT_SUCCESS_LABEL = "My Store";
 
         driver.get(URL);
-        //TODO: Read URL from external file or properties
         String ACTUAL_RESULT_LABEL = driver.getTitle();
         Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
