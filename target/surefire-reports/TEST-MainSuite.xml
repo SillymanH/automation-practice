@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="MainSuite" time="30.158" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="MainSuite" time="32.698" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="16"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,11 +13,12 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="LB"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-16.0.1.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/sleimanhasan/Documents/ecommercetest/target/surefire/surefirebooter6309445819816795197.jar /Users/sleimanhasan/Documents/ecommercetest/target/surefire 2021-05-31T06-36-11_203-jvmRun1 surefire15761827473767280003tmp surefire_015487363141131521161tmp"/>
+    <property name="sun.java.command" value="/Users/sleimanhasan/Documents/ecommercetest/target/surefire/surefirebooter6684148780477258733.jar /Users/sleimanhasan/Documents/ecommercetest/target/surefire 2021-06-01T05-11-21_367-jvmRun1 surefire11895273482848504498tmp surefire_08098919830197858168tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="MainSuite"/>
     <property name="surefire.test.class.path" value="/Users/sleimanhasan/Documents/ecommercetest/target/test-classes:/Users/sleimanhasan/Documents/ecommercetest/target/classes:/Users/sleimanhasan/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/Users/sleimanhasan/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/Users/sleimanhasan/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/Users/sleimanhasan/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/Users/sleimanhasan/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/Users/sleimanhasan/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/Users/sleimanhasan/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/Users/sleimanhasan/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/Users/sleimanhasan/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/Users/sleimanhasan/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/Users/sleimanhasan/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/Users/sleimanhasan/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/sleimanhasan/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/Users/sleimanhasan/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/sleimanhasan/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/Users/sleimanhasan/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/Users/sleimanhasan/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/sleimanhasan/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/Users/sleimanhasan/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/Users/sleimanhasan/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/Users/sleimanhasan/.m2/repository/io/qameta/allure/allure-junit4/2.14.0/allure-junit4-2.14.0.jar:/Users/sleimanhasan/.m2/repository/io/qameta/allure/allure-java-commons/2.14.0/allure-java-commons-2.14.0.jar:/Users/sleimanhasan/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/Users/sleimanhasan/.m2/repository/io/qameta/allure/allure-model/2.14.0/allure-model-2.14.0.jar:/Users/sleimanhasan/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/Users/sleimanhasan/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/Users/sleimanhasan/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/Users/sleimanhasan/.m2/repository/org/apache/tika/tika-core/1.26/tika-core-1.26.jar:/Users/sleimanhasan/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/Users/sleimanhasan/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/Users/sleimanhasan/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar:/Users/sleimanhasan/.m2/repository/org/jooq/joor-java-8/0.9.14/joor-java-8-0.9.14.jar:/Users/sleimanhasan/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/sleimanhasan/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
+    <property name="allure.results.directory" value="/Users/sleimanhasan/Documents/ecommercetest/target/allure-results"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/sleimanhasan"/>
     <property name="user.language" value="en"/>
@@ -28,9 +29,9 @@
     <property name="basedir" value="/Users/sleimanhasan/Documents/ecommercetest"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/sleimanhasan/Documents/ecommercetest/target/surefire/surefirebooter6309445819816795197.jar"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/Users/sleimanhasan/Documents/ecommercetest/target/surefire/surefirebooter6684148780477258733.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="16.0.1+9-24"/>
@@ -55,26 +56,26 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="60.0"/>
   </properties>
-  <testcase name="AgoToHomePage" classname="MainSuite" time="5.838">
+  <testcase name="AgoToHomePage" classname="MainSuite" time="7.567">
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 10253
+Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 20459
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1622432175.468][WARNING]: This version of ChromeDriver has not been tested with Chrome version 91.
-May 31, 2021 6:36:15 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1622513485.978][WARNING]: This version of ChromeDriver has not been tested with Chrome version 91.
+Jun 01, 2021 5:11:26 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
   </testcase>
-  <testcase name="BselectProduct" classname="MainSuite" time="3.386"/>
-  <testcase name="CaddToCart" classname="MainSuite" time="1.73"/>
-  <testcase name="DproceedToCheckout" classname="MainSuite" time="2.091"/>
-  <testcase name="EvalidateSummary" classname="MainSuite" time="3.404"/>
-  <testcase name="FsignIn" classname="MainSuite" time="2.698"/>
-  <testcase name="GvalidateShippingAddress" classname="MainSuite" time="1.854"/>
-  <testcase name="HchooseShippingMethod" classname="MainSuite" time="1.526"/>
-  <testcase name="IchoosePaymentMethod" classname="MainSuite" time="1.964"/>
-  <testcase name="JconfirmOrder" classname="MainSuite" time="2.239"/>
+  <testcase name="BselectProduct" classname="MainSuite" time="4.355"/>
+  <testcase name="CaddToCart" classname="MainSuite" time="1.892"/>
+  <testcase name="DproceedToCheckout" classname="MainSuite" time="2.65"/>
+  <testcase name="EvalidateSummary" classname="MainSuite" time="2.26"/>
+  <testcase name="FsignIn" classname="MainSuite" time="2.859"/>
+  <testcase name="GvalidateShippingAddress" classname="MainSuite" time="2.349"/>
+  <testcase name="HchooseShippingMethod" classname="MainSuite" time="2.356"/>
+  <testcase name="IchoosePaymentMethod" classname="MainSuite" time="0.991"/>
+  <testcase name="JconfirmOrder" classname="MainSuite" time="2.079"/>
 </testsuite>

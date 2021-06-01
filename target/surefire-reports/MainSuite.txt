@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: MainSuite
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.158 s - in MainSuite
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.698 s - in MainSuite
