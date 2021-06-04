@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="MainSuite" time="32.698" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="MainSuite" time="41.365" tests="10" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="16"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="LB"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-16.0.1.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/sleimanhasan/Documents/ecommercetest/target/surefire/surefirebooter6684148780477258733.jar /Users/sleimanhasan/Documents/ecommercetest/target/surefire 2021-06-01T05-11-21_367-jvmRun1 surefire11895273482848504498tmp surefire_08098919830197858168tmp"/>
+    <property name="sun.java.command" value="/Users/sleimanhasan/Documents/ecommercetest/target/surefire/surefirebooter12942588952542953538.jar /Users/sleimanhasan/Documents/ecommercetest/target/surefire 2021-06-04T21-51-03_223-jvmRun1 surefire5766888638159029340tmp surefire_013950106009912867326tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="MainSuite"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/Users/sleimanhasan/Documents/ecommercetest/target/surefire/surefirebooter6684148780477258733.jar"/>
+    <property name="surefire.real.class.path" value="/Users/sleimanhasan/Documents/ecommercetest/target/surefire/surefirebooter12942588952542953538.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="16.0.1+9-24"/>
@@ -56,26 +56,41 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="60.0"/>
   </properties>
-  <testcase name="AgoToHomePage" classname="MainSuite" time="7.567">
+  <testcase name="AgoToHomePage" classname="MainSuite" time="5.54">
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 20459
+Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 40842
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1622513485.978][WARNING]: This version of ChromeDriver has not been tested with Chrome version 91.
-Jun 01, 2021 5:11:26 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1622832671.095][WARNING]: This version of ChromeDriver has not been tested with Chrome version 91.
+Jun 04, 2021 9:51:11 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
   </testcase>
-  <testcase name="BselectProduct" classname="MainSuite" time="4.355"/>
-  <testcase name="CaddToCart" classname="MainSuite" time="1.892"/>
-  <testcase name="DproceedToCheckout" classname="MainSuite" time="2.65"/>
-  <testcase name="EvalidateSummary" classname="MainSuite" time="2.26"/>
-  <testcase name="FsignIn" classname="MainSuite" time="2.859"/>
-  <testcase name="GvalidateShippingAddress" classname="MainSuite" time="2.349"/>
-  <testcase name="HchooseShippingMethod" classname="MainSuite" time="2.356"/>
-  <testcase name="IchoosePaymentMethod" classname="MainSuite" time="0.991"/>
-  <testcase name="JconfirmOrder" classname="MainSuite" time="2.079"/>
+  <testcase name="BselectProduct" classname="MainSuite" time="13.055">
+    <error message="Expected condition failed: waiting for visibility of element located by By.className: fancybox-iframe (tried for 10 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: fancybox-iframe (tried for 10 second(s) with 500 milliseconds interval)
+	at MainSuite.BselectProduct(MainSuite.java:55)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":".fancybox\-iframe"}
+  (Session info: chrome=91.0.4472.77)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Sleimans-MBP', ip: '2001:16a2:c053:df39:3446:ec4f:bf11:2%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.3', java.version: '16.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: /var/folders/g_/3nm3g5y52l1...}, goog:chromeOptions: {debuggerAddress: localhost:52584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 899c7bfdeb42d1f523ffb15b6fb76bbb
+*** Element info: {Using=class name, value=fancybox-iframe}
+	at MainSuite.BselectProduct(MainSuite.java:55)
+]]></error>
+  </testcase>
+  <testcase name="CaddToCart" classname="MainSuite" time="1.712"/>
+  <testcase name="DproceedToCheckout" classname="MainSuite" time="1.808"/>
+  <testcase name="EvalidateSummary" classname="MainSuite" time="2.568"/>
+  <testcase name="FsignIn" classname="MainSuite" time="2.212"/>
+  <testcase name="GvalidateShippingAddress" classname="MainSuite" time="1.692"/>
+  <testcase name="HchooseShippingMethod" classname="MainSuite" time="2.241"/>
+  <testcase name="IchoosePaymentMethod" classname="MainSuite" time="1.328"/>
+  <testcase name="JconfirmOrder" classname="MainSuite" time="2.461"/>
 </testsuite>
