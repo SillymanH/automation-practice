@@ -11,10 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MainSuite {
 
-    //This is a push test change
     private static ChromeDriver driver;
     private static WebDriverWait wait;
-    private WebElement iframe;
     private String EXPECTED_RESULT_SUCCESS_LABEL;
     private String ACTUAL_RESULT_LABEL;
     private static ConfigFileReader configFileReader;
@@ -54,7 +52,7 @@ public class MainSuite {
 
                 quickViewElement.click();
                 wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("fancybox-iframe")));
-                iframe = driver.findElementByClassName("fancybox-iframe");
+                WebElement iframe = driver.findElementByClassName("fancybox-iframe");
                 driver.switchTo().frame(iframe);
                 List<WebElement> headerElements = driver.findElementsByTagName("h1");
                 for (WebElement header : headerElements) {
