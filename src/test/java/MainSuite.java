@@ -1,14 +1,14 @@
 import dataProvider.ConfigFileReader;
-import org.junit.*;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import org.junit.runners.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class MainSuite {
 
     private static ChromeDriver driver;
@@ -17,7 +17,7 @@ public class MainSuite {
     private String ACTUAL_RESULT_LABEL;
     private static ConfigFileReader configFileReader;
 
-    @BeforeClass
+    @BeforeAll
     public static void init(){
 
         configFileReader = new ConfigFileReader();
@@ -29,24 +29,26 @@ public class MainSuite {
     }
 
     @Test
-    public void AgoToHomePage(){
+    @Order(1)
+    public void goToHomePage(){
 
         String URL = configFileReader.getURL();
         String EXPECTED_RESULT_SUCCESS_LABEL = "My Store";
 
         driver.get(URL);
         String ACTUAL_RESULT_LABEL = driver.getTitle();
-        Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
+        assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
 
     @Test
-    public void BselectProduct(){
+    @Order(2)
+    public void selectProduct(){
 
         String itemURL = "http://automationpractice.com/index.php?id_product=2&controller=product";
         String EXPECTED_RESULT_SUCCESS_LABEL = "Blouse";
         String ACTUAL_RESULT_LABEL = "";
 
-        List<WebElement> aTagElements = driver.findElementsByTagName("a");;
+        List<WebElement> aTagElements = driver.findElementsByTagName("a");
         for (WebElement quickViewElement : aTagElements){
             if (quickViewElement.getAttribute("href").equals(itemURL)) {
 
@@ -63,11 +65,12 @@ public class MainSuite {
                 break;
             }
         }
-        Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
+        assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
 
     @Test
-    public void CaddToCart(){
+    @Order(3)
+    public void addToCart(){
 
         String EXPECTED_RESULT_SUCCESS_LABEL = "Product successfully added to your shopping cart";
         String ACTUAL_RESULT_LABEL = "";
@@ -83,33 +86,36 @@ public class MainSuite {
                 break;
             }
         }
-        Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
+        assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
 
     @Test
-    public void DproceedToCheckout() {
+    @Order(4)
+    public void proceedToCheckout() {
 
         EXPECTED_RESULT_SUCCESS_LABEL = "Your shopping cart";
 
         WebElement proceedToCheckoutButton = driver.findElementByClassName("button-medium");
         proceedToCheckoutButton.click();
         ACTUAL_RESULT_LABEL = driver.findElementByClassName("navigation_page").getAttribute("innerText");
-        Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
+        assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
 
     @Test
-    public void EvalidateSummary() {
+    @Order(5)
+    public void validateSummary() {
 
         EXPECTED_RESULT_SUCCESS_LABEL = "Authentication";
 
         WebElement proceedToCheckoutButton = driver.findElementByClassName("standard-checkout");
         proceedToCheckoutButton.click();
         ACTUAL_RESULT_LABEL = driver.findElementByClassName("navigation_page").getAttribute("innerText");
-        Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
+        assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
 
     @Test
-    public void FsignIn() {
+    @Order(6)
+    public void signIn() {
 
         EXPECTED_RESULT_SUCCESS_LABEL = "Addresses";
         String USERNAME = configFileReader.getUsername();
@@ -122,22 +128,24 @@ public class MainSuite {
         passwordField.sendKeys(PASSWORD);
         submitButton.click();
         ACTUAL_RESULT_LABEL = driver.findElementByClassName("navigation_page").getAttribute("innerText");
-        Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
+        assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
 
     @Test
-    public void GvalidateShippingAddress() {
+    @Order(7)
+    public void validateShippingAddress() {
 
         EXPECTED_RESULT_SUCCESS_LABEL = "Shipping";
 
         WebElement proceedToCheckoutButton = driver.findElementByName("processAddress");
         proceedToCheckoutButton.click();
         ACTUAL_RESULT_LABEL = driver.findElementByClassName("navigation_page").getAttribute("innerText");
-        Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
+        assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
 
     @Test
-    public void HchooseShippingMethod() {
+    @Order(8)
+    public void chooseShippingMethod() {
 
         EXPECTED_RESULT_SUCCESS_LABEL = "Your payment method";
 
@@ -148,31 +156,33 @@ public class MainSuite {
         }
         proceedToCheckoutButton.click();
         ACTUAL_RESULT_LABEL = driver.findElementByClassName("navigation_page").getAttribute("innerText");
-        Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
+        assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
 
     @Test
-    public void IchoosePaymentMethod() {
+    @Order(9)
+    public void choosePaymentMethod() {
 
         EXPECTED_RESULT_SUCCESS_LABEL = "Bank-wire payment.";
         WebElement payByBankWireButton = driver.findElementByClassName("bankwire");
         payByBankWireButton.click();
         ACTUAL_RESULT_LABEL = driver.findElementByClassName("navigation_page").getAttribute("innerText");
-        Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
+        assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
 
     @Test
-    public void JconfirmOrder() {
+    @Order(10)
+    public void confirmOrder() {
 
         EXPECTED_RESULT_SUCCESS_LABEL = "Order confirmation";
 
         WebElement confirmOrderButton = driver.findElementByCssSelector("#cart_navigation > button");
         confirmOrderButton.click();
         ACTUAL_RESULT_LABEL = driver.findElementByClassName("navigation_page").getAttribute("innerText");
-        Assert.assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
+        assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
 
-    @AfterClass
+    @AfterAll
     public static void tearDown(){
         driver.close();
     }
