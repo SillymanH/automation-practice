@@ -37,7 +37,7 @@ public class ConfigFileReader {
         String username = properties.getProperty("username");
         if(username!= null)
             return username;
-        else throw new RuntimeException("username not specified in the Configuration.properties file.");
+        else throw new RuntimeException("Username not specified in the Configuration.properties file.");
     }
 
     public String getPassword() {
@@ -45,7 +45,15 @@ public class ConfigFileReader {
         String decodedPassword = decodePassword(properties.getProperty("password"));
         if(decodedPassword!= null)
             return decodedPassword;
-        else throw new RuntimeException("password is not specified in the Configuration.properties file.");
+        else throw new RuntimeException("Password is not specified in the Configuration.properties file.");
+    }
+
+    public String getItemURL() {
+
+        String itemURL = properties.getProperty("itemURL");
+        if(itemURL!= null)
+            return itemURL;
+        else throw new RuntimeException("Item URL is not specified in the Configuration.properties file.");
     }
 
     public String decodePassword(String encodedBytes) {
@@ -54,9 +62,9 @@ public class ConfigFileReader {
         return new String(decodedBytes);
     }
 
-    public String getURL() {
+    public String getHomePageURL() {
 
-        String URL = properties.getProperty("url");
+        String URL = properties.getProperty("homePageURL");
         if(URL!= null)
             return URL;
         else throw new RuntimeException("URL is not specified in the Configuration.properties file.");

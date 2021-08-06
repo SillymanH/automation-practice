@@ -32,7 +32,7 @@ public class MainSuite {
     @Order(1)
     public void goToHomePage(){
 
-        String URL = configFileReader.getURL();
+        String URL = configFileReader.getHomePageURL();
         String EXPECTED_RESULT_SUCCESS_LABEL = "My Store";
 
         driver.get(URL);
@@ -44,7 +44,7 @@ public class MainSuite {
     @Order(2)
     public void selectProduct(){
 
-        String itemURL = "http://automationpractice.com/index.php?id_product=2&controller=product";
+        String itemURL = configFileReader.getItemURL();
         String EXPECTED_RESULT_SUCCESS_LABEL = "Blouse";
         String ACTUAL_RESULT_LABEL = "";
 
