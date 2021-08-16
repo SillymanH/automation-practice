@@ -20,9 +20,23 @@
         <junit.jupiter>5.4.0</junit.jupiter>
         <slf4j-nop.version>1.7.32</slf4j-nop.version>
         <java.version>16.0.1</java.version>
+        <java.client>7.2.0</java.client>
+        <junit.jupiter.version>5.8.0-M1</junit.jupiter.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -51,8 +65,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.plugin}</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>10</source>
+                    <target>10</target>
                 </configuration>
             </plugin>
 
