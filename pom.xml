@@ -19,7 +19,7 @@
         <junit.vintage>5.4.0</junit.vintage>
         <junit.jupiter>5.4.0</junit.jupiter>
         <slf4j-nop.version>1.7.32</slf4j-nop.version>
-        <java.version>16.0.1</java.version>
+        <java.version>10</java.version>
         <java.client>7.2.0</java.client>
         <junit.jupiter.version>5.8.0-M1</junit.jupiter.version>
     </properties>
@@ -65,8 +65,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.plugin}</version>
                 <configuration>
-                    <source>10</source>
-                    <target>10</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
 
