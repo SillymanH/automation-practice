@@ -4,6 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -42,7 +43,7 @@ public class MainSuite {
 
     @Test
     @Order(2)
-    public void selectProduct(){
+    public void selectProduct() {
 
         String itemURL = configFileReader.getItemURL();
         String EXPECTED_RESULT_SUCCESS_LABEL = "Blouse";
@@ -53,9 +54,7 @@ public class MainSuite {
             if (quickViewElement.getAttribute("href").equals(itemURL)) {
 
                 quickViewElement.click();
-                wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("fancybox-iframe")));
-                WebElement iframe = driver.findElementByClassName("fancybox-iframe");
-                driver.switchTo().frame(iframe);
+                wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.className("fancybox-iframe")));
                 List<WebElement> headerElements = driver.findElementsByTagName("h1");
                 for (WebElement header : headerElements) {
 
@@ -77,6 +76,7 @@ public class MainSuite {
 
         WebElement addToCartBtn = driver.findElementByName("Submit");
         addToCartBtn.click();
+        driver.switchTo().defaultContent();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("icon-ok")));
         List<WebElement> addToCartHeaders = driver.findElementsByTagName("h2");
         for (WebElement header : addToCartHeaders) {
@@ -184,7 +184,7 @@ public class MainSuite {
 
     @AfterAll
     public static void tearDown(){
-        driver.close();
+//        driver.close();
     }
 
 }
