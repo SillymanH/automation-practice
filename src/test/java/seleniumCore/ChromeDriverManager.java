@@ -3,6 +3,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import dataProvider.ConfigFileReader;
 
+import java.util.concurrent.TimeUnit;
+
 //Implementing the Factory Design Pattern
 public class ChromeDriverManager extends DriverManager{
 
@@ -22,5 +24,6 @@ public class ChromeDriverManager extends DriverManager{
         options.addArguments("disable-infobars");
 
         this.driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 }
