@@ -20,7 +20,6 @@ public class MainSuite {
     static DriverManager driverManager;
     static WebDriver driver;
     static WebDriverWait wait;
-    static ConfigFileReader configFileReader;
     String EXPECTED_RESULT_SUCCESS_LABEL;
     String ACTUAL_RESULT_LABEL;
     HomePage homePage;
@@ -51,7 +50,6 @@ public class MainSuite {
 
         ACTUAL_RESULT_LABEL = driver.findElement(By.className("navigation_page")).getAttribute("innerText");
         assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
-
     }
 
     @AfterAll

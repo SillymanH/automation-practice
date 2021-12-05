@@ -24,7 +24,6 @@ public class ChromeDriverManager extends DriverManager{
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-infobars");
 
-
         this.driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
