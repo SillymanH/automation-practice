@@ -11,10 +11,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class HomePage {
 
     WebDriver driver;
-    static WebDriverWait wait;
     String EXPECTED_RESULT_SUCCESS_LABEL;
     String ACTUAL_RESULT_LABEL;
-    static ConfigFileReader configFileReader  = new ConfigFileReader();
+
+    static WebDriverWait wait;
+    static ConfigFileReader configFileReader;
+
+    //POM Objects
+    private final By aTags = By.tagName("a");
+    private final By addToCartBtn = By.name("Submit");
+    private final By okayIcon = By.className("icon-ok");
+    private final By proceedToCheckoutBtn = By.className("button-medium");
+    private final By proceedToCheckoutSummaryBtn = By.className("standard-checkout");
+    private final By navigationPageLocator = By.className("navigation_page");
+    private final By emailField = By.id("email");
+    private final By passwordField = By.id("passwd");
+    private final By submitButton = By.id("SubmitLogin");
+    private final By proceedToCheckoutShippingBtn = By.name("processAddress");
+    private final By shippingMethodCheckbox = By.id("cgv");
+    private final By proceedToCheckoutShippingMethodBtn = By.name("processCarrier");
+    private final By payByBankWireBtn = By.className("bankwire");
+    private final By confirmOrderBtn = By.cssSelector("#cart_navigation > button");
 
     public HomePage(WebDriver driver){
 
@@ -22,7 +39,6 @@ public class HomePage {
         wait = new WebDriverWait(driver, 10);
         configFileReader = new ConfigFileReader();
     }
-
     public String getPageTitle(){
         return driver.getTitle();
     }
@@ -35,7 +51,7 @@ public class HomePage {
     public void selectProduct(){
 
         String itemURL = configFileReader.getItemURL();
-        List<WebElement> aTagElements = driver.findElements(By.tagName("a"));
+        List<WebElement> aTagElements = driver.findElements(aTags);
         for (WebElement quickViewElement : aTagElements){
             if (quickViewElement.getAttribute("href").equals(itemURL)) {
                 quickViewElement.click();
@@ -45,62 +61,50 @@ public class HomePage {
     }
     public void addToCart(){
 
-        WebElement addToCartBtn = driver.findElement(By.name("Submit"));
-        addToCartBtn.click();
+        driver.findElement(addToCartBtn).click();
         driver.switchTo().defaultContent();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("icon-ok")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(okayIcon));
     }
     public void proceedToCheckout() {
 
-        WebElement proceedToCheckoutButton = driver.findElement(By.className("button-medium"));
-        proceedToCheckoutButton.click();
+        driver.findElement(proceedToCheckoutBtn).click();
     }
     public void validateSummary() {
 
         EXPECTED_RESULT_SUCCESS_LABEL = "Authentication";
-        WebElement proceedToCheckoutButton = driver.findElement(By.className("standard-checkout"));
-        proceedToCheckoutButton.click();
-        ACTUAL_RESULT_LABEL = driver.findElement(By.className("navigation_page")).getAttribute("innerText");
+        driver.findElement(proceedToCheckoutSummaryBtn).click();
+        ACTUAL_RESULT_LABEL = driver.findElement(navigationPageLocator).getAttribute("innerText");
         assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
     public void signIn() {
 
         String USERNAME = configFileReader.getUsername();
         String PASSWORD = configFileReader.getPassword();
-        WebElement emailField = driver.findElement(By.id("email"));
-        WebElement passwordField = driver.findElement(By.id("passwd"));
-        WebElement submitButton = driver.findElement(By.id("SubmitLogin"));
-        emailField.sendKeys(USERNAME);
-        passwordField.sendKeys(PASSWORD);
-        submitButton.click();
+        driver.findElement(emailField).sendKeys(USERNAME);
+        driver.findElement(passwordField).sendKeys(PASSWORD);
+        driver.findElement(submitButton).click();
     }
     public void validateShippingAddress() {
 
         EXPECTED_RESULT_SUCCESS_LABEL = "Shipping";
-        WebElement proceedToCheckoutButton = driver.findElement(By.name("processAddress"));
-        proceedToCheckoutButton.click();
-        ACTUAL_RESULT_LABEL = driver.findElement(By.className("navigation_page")).getAttribute("innerText");
+        driver.findElement(proceedToCheckoutShippingBtn).click();
+        ACTUAL_RESULT_LABEL = driver.findElement(navigationPageLocator).getAttribute("innerText");
         assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
     }
     public void chooseShippingMethod() {
 
-        WebElement checkbox = driver.findElement(By.id("cgv"));
-        WebElement proceedToCheckoutButton = driver.findElement(By.name("processCarrier"));
-        if (!checkbox.isSelected()) {
-            checkbox.click();
+        if (!driver.findElement(shippingMethodCheckbox).isSelected()) {
+            driver.findElement(shippingMethodCheckbox).click();
         }
-        proceedToCheckoutButton.click();
+        driver.findElement(proceedToCheckoutShippingMethodBtn).click();
     }
     public void choosePaymentMethod() {
 
-        WebElement payByBankWireButton = driver.findElement(By.className("bankwire"));
-        payByBankWireButton.click();
-
+        driver.findElement(payByBankWireBtn).click();
     }
     public void confirmOrder() {
 
-        WebElement confirmOrderButton = driver.findElement(By.cssSelector("#cart_navigation > button"));
-        confirmOrderButton.click();
+        driver.findElement(confirmOrderBtn).click();
 
     }
 
