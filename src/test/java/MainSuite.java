@@ -22,6 +22,7 @@ public class MainSuite {
     static WebDriverWait wait;
     static ConfigFileReader configFileReader;
     String EXPECTED_RESULT_SUCCESS_LABEL;
+    String ACTUAL_RESULT_LABEL;
     HomePage homePage;
 
     @BeforeAll
@@ -32,7 +33,9 @@ public class MainSuite {
     }
 
     @Test
-    public void happyPathCheckout(){
+    public void guestCheckout(){
+
+        EXPECTED_RESULT_SUCCESS_LABEL = "Order confirmation";
 
         homePage = new HomePage(driver);
         homePage.goToHomePage();
@@ -45,6 +48,9 @@ public class MainSuite {
         homePage.chooseShippingMethod();
         homePage.choosePaymentMethod();
         homePage.confirmOrder();
+
+        ACTUAL_RESULT_LABEL = driver.findElement(By.className("navigation_page")).getAttribute("innerText");
+        assertEquals(EXPECTED_RESULT_SUCCESS_LABEL, ACTUAL_RESULT_LABEL);
 
     }
 
